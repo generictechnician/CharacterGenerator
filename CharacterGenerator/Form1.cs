@@ -51,9 +51,8 @@ namespace Character_Generator
                 File.WriteAllText(filePath, "");
             }
             //add name to file
-            File.AppendAllText(filePath, "<character>" + Environment.NewLine);
             rtbOut.AppendText(tbName.Text + Environment.NewLine);
-            File.AppendAllText(filePath, "<name>" + tbName.Text + "</name>" + Environment.NewLine);
+            File.AppendAllText(filePath, "<name>" + tbName.Text +  Environment.NewLine);
             //generate values
             for (int i = 1; i <= 2; i++)
             {
@@ -71,9 +70,8 @@ namespace Character_Generator
                     stat[i] = 2; //stops bad values for actual code
                 }
                 rtbOut.AppendText(optionName[i] + ": " + stat[i].ToString() + Environment.NewLine);
-                File.AppendAllText(filePath, "<" + optionName[i] + ">" + stat[i].ToString() + "</" + optionName[i] + ">" + Environment.NewLine);
+                File.AppendAllText(filePath, "<" + optionName[i] + ">" + stat[i].ToString() + Environment.NewLine);
             }
-            File.AppendAllText(filePath, "</character>" + Environment.NewLine);
             btnGenerate.Enabled = false;
         }
 
