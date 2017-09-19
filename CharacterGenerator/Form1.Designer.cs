@@ -38,10 +38,9 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rBSpeed = new System.Windows.Forms.RadioButton();
             this.rBEndurance = new System.Windows.Forms.RadioButton();
-            this.newCharacterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -102,8 +101,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.newCharacterToolStripMenuItem,
-            this.closeToolStripMenuItem});
+            this.newCharacterToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(294, 24);
@@ -133,6 +131,13 @@
             this.openFileToolStripMenuItem.Text = "Open File";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
             // 
+            // newCharacterToolStripMenuItem
+            // 
+            this.newCharacterToolStripMenuItem.Name = "newCharacterToolStripMenuItem";
+            this.newCharacterToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.newCharacterToolStripMenuItem.Text = "New Character";
+            this.newCharacterToolStripMenuItem.Click += new System.EventHandler(this.newCharactorToolStripMenuItem_Click);
+            // 
             // rBSpeed
             // 
             this.rBSpeed.Checked = true;
@@ -152,19 +157,6 @@
             this.rBEndurance.TabIndex = 23;
             this.rBEndurance.Text = "Endurance";
             this.rBEndurance.UseVisualStyleBackColor = true;
-            // 
-            // newCharacterToolStripMenuItem
-            // 
-            this.newCharacterToolStripMenuItem.Name = "newCharacterToolStripMenuItem";
-            this.newCharacterToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
-            this.newCharacterToolStripMenuItem.Text = "New Character";
-            this.newCharacterToolStripMenuItem.Click += new System.EventHandler(this.newCharactorToolStripMenuItem_Click);
-            // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
-            this.closeToolStripMenuItem.Text = "Close";
             // 
             // Form1
             // 
@@ -206,7 +198,6 @@
         private System.Windows.Forms.RadioButton rBSpeed;
         private System.Windows.Forms.RadioButton rBEndurance;
         private System.Windows.Forms.ToolStripMenuItem newCharacterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
     }
 }
 
