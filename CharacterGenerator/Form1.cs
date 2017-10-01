@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace Character_Generator
 {
@@ -23,12 +24,9 @@ namespace Character_Generator
             optionName[3] = "endu";
             int[] stat = new int[4];
             
-            //Does File Exist? if No, Create it!
-            if (!File.Exists(filePath))
-            {
-                File.WriteAllText(filePath, "");
-            }
-            //add name to file
+            //Create empty File
+            File.WriteAllText(filePath, "");
+            //add name to file and textbox
             rtbOut.AppendText(tbName.Text + Environment.NewLine);
             File.AppendAllText(filePath, "<name>" + tbName.Text +  Environment.NewLine);
 
@@ -68,14 +66,28 @@ namespace Character_Generator
         {
             if (OutInfo == false)
             {
-                this.Height = 370;
+                this.Height = 425;
                 OutInfo = true;
             }
             else
             {
-                this.Height = 260;
+                this.Height = 320;
                 OutInfo = false;
             }
+        }
+
+        private void randomiseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            numMin.Value = random.Next((int)numMin.Minimum, (int)numMin.Maximum);
+            numMax.Value = random.Next((int)numMax.Minimum, (int)numMax.Maximum);
+            numEndurance.Value = random.Next((int)numEndurance.Minimum, (int)numEndurance.Maximum);
+        }
+
+        private void btnRace_Click(object sender, EventArgs e)
+        {
+            Process.Start("AnimalRacing.exe");
+            this.Close();
         }
     }
 }

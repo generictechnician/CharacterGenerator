@@ -37,13 +37,15 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showOutputsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.randomiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numMin = new System.Windows.Forms.NumericUpDown();
             this.numMax = new System.Windows.Forms.NumericUpDown();
             this.numEndurance = new System.Windows.Forms.NumericUpDown();
             this.lblMin = new System.Windows.Forms.Label();
             this.lblMax = new System.Windows.Forms.Label();
             this.lblEndurance = new System.Windows.Forms.Label();
-            this.showOutputsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnRace = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMax)).BeginInit();
@@ -81,7 +83,7 @@
             // 
             // rtbOut
             // 
-            this.rtbOut.Location = new System.Drawing.Point(46, 224);
+            this.rtbOut.Location = new System.Drawing.Point(46, 281);
             this.rtbOut.MaxLength = 65535;
             this.rtbOut.Name = "rtbOut";
             this.rtbOut.ReadOnly = true;
@@ -100,7 +102,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
+            this.fileToolStripMenuItem,
+            this.randomiseToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(294, 24);
@@ -120,16 +123,30 @@
             // newFileToolStripMenuItem
             // 
             this.newFileToolStripMenuItem.Name = "newFileToolStripMenuItem";
-            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.newFileToolStripMenuItem.Text = "New File";
             this.newFileToolStripMenuItem.Click += new System.EventHandler(this.newFileToolStripMenuItem_Click);
             // 
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.openFileToolStripMenuItem.Text = "Open File";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
+            // 
+            // showOutputsToolStripMenuItem
+            // 
+            this.showOutputsToolStripMenuItem.Name = "showOutputsToolStripMenuItem";
+            this.showOutputsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.showOutputsToolStripMenuItem.Text = "Show Outputs";
+            this.showOutputsToolStripMenuItem.Click += new System.EventHandler(this.showOutputsToolStripMenuItem_Click);
+            // 
+            // randomiseToolStripMenuItem
+            // 
+            this.randomiseToolStripMenuItem.Name = "randomiseToolStripMenuItem";
+            this.randomiseToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
+            this.randomiseToolStripMenuItem.Text = "Randomise";
+            this.randomiseToolStripMenuItem.Click += new System.EventHandler(this.randomiseToolStripMenuItem_Click);
             // 
             // numMin
             // 
@@ -219,18 +236,22 @@
             this.lblEndurance.Text = "Endurance";
             this.lblEndurance.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // showOutputsToolStripMenuItem
+            // btnRace
             // 
-            this.showOutputsToolStripMenuItem.Name = "showOutputsToolStripMenuItem";
-            this.showOutputsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.showOutputsToolStripMenuItem.Text = "Show Outputs";
-            this.showOutputsToolStripMenuItem.Click += new System.EventHandler(this.showOutputsToolStripMenuItem_Click);
+            this.btnRace.Location = new System.Drawing.Point(16, 224);
+            this.btnRace.Name = "btnRace";
+            this.btnRace.Size = new System.Drawing.Size(266, 51);
+            this.btnRace.TabIndex = 28;
+            this.btnRace.Text = "Race";
+            this.btnRace.UseVisualStyleBackColor = true;
+            this.btnRace.Click += new System.EventHandler(this.btnRace_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 221);
+            this.ClientSize = new System.Drawing.Size(294, 281);
+            this.Controls.Add(this.btnRace);
             this.Controls.Add(this.lblEndurance);
             this.Controls.Add(this.lblMax);
             this.Controls.Add(this.lblMin);
@@ -243,8 +264,8 @@
             this.Controls.Add(this.rtbOut);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.menuStrip1);
-            this.MaximumSize = new System.Drawing.Size(310, 370);
-            this.MinimumSize = new System.Drawing.Size(310, 260);
+            this.MaximumSize = new System.Drawing.Size(310, 425);
+            this.MinimumSize = new System.Drawing.Size(310, 320);
             this.Name = "Form1";
             this.Text = "Character Generator";
             this.menuStrip1.ResumeLayout(false);
@@ -274,6 +295,8 @@
         private System.Windows.Forms.Label lblMax;
         private System.Windows.Forms.Label lblEndurance;
         private System.Windows.Forms.ToolStripMenuItem showOutputsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem randomiseToolStripMenuItem;
+        private System.Windows.Forms.Button btnRace;
     }
 }
 
