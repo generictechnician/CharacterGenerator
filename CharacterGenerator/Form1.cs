@@ -35,14 +35,24 @@ namespace Character_Generator
             stat[2] = (int)numMax.Value;
             stat[3] = (int)numEndurance.Value;
 
-            //add stats to file and Out Box
-            for (int i = 1; i < optionName.Length; i++)
-            {
-                rtbOut.AppendText(optionName[i] + ": " + stat[i].ToString() + Environment.NewLine);
-                File.AppendAllText(filePath, "<" + optionName[i] + ">" + stat[i].ToString() + Environment.NewLine);
-            }
 
-            //Reset Values
+            //error check values - greater than or smaller than each other
+            if (stat[2] < stat[1] || stat[1] > stat[2])
+            {
+                string message = "The minimum speed was greater than the maximum speed" + Environment.NewLine + "That will break something." + Environment.NewLine + "Please try again!";
+                string title = "No";
+                MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                //add stats to file and Out Box
+                for (int i = 1; i < optionName.Length; i++)
+                {
+                    rtbOut.AppendText(optionName[i] + ": " + stat[i].ToString() + Environment.NewLine);
+                    File.AppendAllText(filePath, "<" + optionName[i] + ">" + stat[i].ToString() + Environment.NewLine);
+                }
+            }
+            //Reset Values to allow easier creation of further chars
             tbName.Text = "";
             numMin.Value = 1;
             numMax.Value = 1;
@@ -51,19 +61,17 @@ namespace Character_Generator
 
         private void newFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //create a blank text file. 
             using (StreamWriter sw = File.CreateText(filePath))
             {
                 sw.WriteLine("");
             }
         }
 
-        private void openFileToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            System.Diagnostics.Process.Start("notepad.exe", filePath);
-        }
-
         private void showOutputsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Expands the interface to show the output box. Mainly for debugging
+            //based on a true/false var
             if (OutInfo == false)
             {
                 this.Height = 425;
@@ -78,16 +86,24 @@ namespace Character_Generator
 
         private void randomiseToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //Generate computer random statistics based on the minimum and maximum values for the num boxes
             Random random = new Random();
-            numMin.Value = random.Next((int)numMin.Minimum, (int)numMin.Maximum);
-            numMax.Value = random.Next((int)numMax.Minimum, (int)numMax.Maximum);
+            numMin.Value = random.Next((int)numMin.Minimum, ((int)numMin.Maximum - 1));//-1 to ensure there is a value to generate for max speed
+            numMax.Value = random.Next((int)numMin.Value, (int)numMax.Maximum);//get the value of the minimum to ensure that the value is higher
             numEndurance.Value = random.Next((int)numEndurance.Minimum, (int)numEndurance.Maximum);
         }
 
         private void btnRace_Click(object sender, EventArgs e)
         {
+            //open the second program and close this one!
             Process.Start("AnimalRacing.exe");
             this.Close();
+        }
+
+        private void deleteFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Remove the file
+            File.Delete(filePath);
         }
     }
 }

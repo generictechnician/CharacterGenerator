@@ -36,7 +36,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showOutputsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randomiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numMin = new System.Windows.Forms.NumericUpDown();
@@ -46,6 +45,7 @@
             this.lblMax = new System.Windows.Forms.Label();
             this.lblEndurance = new System.Windows.Forms.Label();
             this.btnRace = new System.Windows.Forms.Button();
+            this.deleteFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMax)).BeginInit();
@@ -114,7 +114,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newFileToolStripMenuItem,
-            this.openFileToolStripMenuItem,
+            this.deleteFileToolStripMenuItem,
             this.showOutputsToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -123,21 +123,14 @@
             // newFileToolStripMenuItem
             // 
             this.newFileToolStripMenuItem.Name = "newFileToolStripMenuItem";
-            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newFileToolStripMenuItem.Text = "New File";
             this.newFileToolStripMenuItem.Click += new System.EventHandler(this.newFileToolStripMenuItem_Click);
-            // 
-            // openFileToolStripMenuItem
-            // 
-            this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-            this.openFileToolStripMenuItem.Text = "Open File";
-            this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
             // 
             // showOutputsToolStripMenuItem
             // 
             this.showOutputsToolStripMenuItem.Name = "showOutputsToolStripMenuItem";
-            this.showOutputsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.showOutputsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.showOutputsToolStripMenuItem.Text = "Show Outputs";
             this.showOutputsToolStripMenuItem.Click += new System.EventHandler(this.showOutputsToolStripMenuItem_Click);
             // 
@@ -246,6 +239,13 @@
             this.btnRace.UseVisualStyleBackColor = true;
             this.btnRace.Click += new System.EventHandler(this.btnRace_Click);
             // 
+            // deleteFileToolStripMenuItem
+            // 
+            this.deleteFileToolStripMenuItem.Name = "deleteFileToolStripMenuItem";
+            this.deleteFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteFileToolStripMenuItem.Text = "Delete File";
+            this.deleteFileToolStripMenuItem.Click += new System.EventHandler(this.deleteFileToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,7 +287,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newFileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openFileToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown numMin;
         private System.Windows.Forms.NumericUpDown numMax;
         private System.Windows.Forms.NumericUpDown numEndurance;
@@ -297,6 +296,7 @@
         private System.Windows.Forms.ToolStripMenuItem showOutputsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem randomiseToolStripMenuItem;
         private System.Windows.Forms.Button btnRace;
+        private System.Windows.Forms.ToolStripMenuItem deleteFileToolStripMenuItem;
     }
 }
 
