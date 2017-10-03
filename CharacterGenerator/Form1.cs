@@ -16,28 +16,13 @@ namespace Character_Generator
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
-        {
-            //Vars & Arrays
-            string[] optionName = new string[4];
-            optionName[1] = "minS";
-            optionName[2] = "maxS";
-            optionName[3] = "endu";
-            int[] stat = new int[4];
-            
-            //Create empty File
-            File.WriteAllText(filePath, "");
+        {           
             //add name to file and textbox
             rtbOut.AppendText(tbName.Text + Environment.NewLine);
-            File.AppendAllText(filePath, "<name>" + tbName.Text +  Environment.NewLine);
-
-            //Get Values
-            stat[1] = (int)numMin.Value;
-            stat[2] = (int)numMax.Value;
-            stat[3] = (int)numEndurance.Value;
-
+            File.AppendAllText(filePath, "<name>" + tbName.Text + Environment.NewLine);
 
             //error check values - greater than or smaller than each other
-            if (stat[2] < stat[1] || stat[1] > stat[2])
+            if (numMin.Value > numMax.Value )
             {
                 string message = "The minimum speed was greater than the maximum speed" + Environment.NewLine + "That will break something." + Environment.NewLine + "Please try again!";
                 string title = "No";
@@ -46,12 +31,16 @@ namespace Character_Generator
             else
             {
                 //add stats to file and Out Box
-                for (int i = 1; i < optionName.Length; i++)
-                {
-                    rtbOut.AppendText(optionName[i] + ": " + stat[i].ToString() + Environment.NewLine);
-                    File.AppendAllText(filePath, "<" + optionName[i] + ">" + stat[i].ToString() + Environment.NewLine);
-                }
+                rtbOut.AppendText("minS: " + numMin.Value.ToString() + Environment.NewLine);
+                rtbOut.AppendText("maxS: " + numMax.Value.ToString() + Environment.NewLine);
+                rtbOut.AppendText("endu: " + numEndurance.Value.ToString() + Environment.NewLine);
+
+                File.AppendAllText(filePath, "<minS>" + numMin.Value.ToString() + Environment.NewLine);
+                File.AppendAllText(filePath, "<maxS>" + numMax.Value.ToString() + Environment.NewLine);
+                File.AppendAllText(filePath, "<endu>" + numEndurance.Value.ToString() + Environment.NewLine);
             }
+
+
             //Reset Values to allow easier creation of further chars
             tbName.Text = "";
             numMin.Value = 1;
@@ -104,6 +93,12 @@ namespace Character_Generator
         {
             //Remove the file
             File.Delete(filePath);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Create empty File
+            File.WriteAllText(filePath, "");
         }
     }
 }

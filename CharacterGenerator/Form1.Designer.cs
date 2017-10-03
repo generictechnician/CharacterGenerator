@@ -36,6 +36,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showOutputsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randomiseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numMin = new System.Windows.Forms.NumericUpDown();
@@ -45,7 +46,6 @@
             this.lblMax = new System.Windows.Forms.Label();
             this.lblEndurance = new System.Windows.Forms.Label();
             this.btnRace = new System.Windows.Forms.Button();
-            this.deleteFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numMax)).BeginInit();
@@ -123,14 +123,21 @@
             // newFileToolStripMenuItem
             // 
             this.newFileToolStripMenuItem.Name = "newFileToolStripMenuItem";
-            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.newFileToolStripMenuItem.Text = "New File";
             this.newFileToolStripMenuItem.Click += new System.EventHandler(this.newFileToolStripMenuItem_Click);
+            // 
+            // deleteFileToolStripMenuItem
+            // 
+            this.deleteFileToolStripMenuItem.Name = "deleteFileToolStripMenuItem";
+            this.deleteFileToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.deleteFileToolStripMenuItem.Text = "Delete File";
+            this.deleteFileToolStripMenuItem.Click += new System.EventHandler(this.deleteFileToolStripMenuItem_Click);
             // 
             // showOutputsToolStripMenuItem
             // 
             this.showOutputsToolStripMenuItem.Name = "showOutputsToolStripMenuItem";
-            this.showOutputsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.showOutputsToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.showOutputsToolStripMenuItem.Text = "Show Outputs";
             this.showOutputsToolStripMenuItem.Click += new System.EventHandler(this.showOutputsToolStripMenuItem_Click);
             // 
@@ -239,13 +246,6 @@
             this.btnRace.UseVisualStyleBackColor = true;
             this.btnRace.Click += new System.EventHandler(this.btnRace_Click);
             // 
-            // deleteFileToolStripMenuItem
-            // 
-            this.deleteFileToolStripMenuItem.Name = "deleteFileToolStripMenuItem";
-            this.deleteFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.deleteFileToolStripMenuItem.Text = "Delete File";
-            this.deleteFileToolStripMenuItem.Click += new System.EventHandler(this.deleteFileToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +268,7 @@
             this.MinimumSize = new System.Drawing.Size(310, 320);
             this.Name = "Form1";
             this.Text = "Character Generator";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMin)).EndInit();
